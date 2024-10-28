@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="favicon/mayor.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    
+    
+</head>
+<body>
+    
+
+<div class="container-fluid  mt-lg-5 mt-3 col-lg-6 col-md-8 col-10 mx-auto shadow rounded-3 px-lg-4 px-2">
+    <h2 class="text-center my-lg-3 my-2">Grade Checker</h2>
+    <input type="number" class="form-control shadow-none my-lg-3 my-2" placeholder="Enter your score" id="score" autofocus>
+    <button onclick="gradeChecker()" class="btn btn-secondary my-lg-3 my-2 w-100">Check</button>
+    <div class="text-center fw-bold fs-3 my-2" id="showResults">Your result</div>
+</div>
+
+    <script>
+        var songFail = new Audio('audio/ero.mp3')
+        var songPass = new Audio('audio/bomb.mp3')
+        var songCredit = new Audio('audio/laugh.wav')
+        var songBrave = new Audio('audio/clap.mp3')
+        var songAce = new Audio('audio/thank.mp3')
+
+        function gradeChecker() {
+        if(score.value == '') {
+        console.log('fill it up')
+        } else {
+            var userScore = Number(score.value)
+            if(userScore >= 0 && userScore < 40) {
+                showResults.innerHTML = 'fail - F'
+                songFail.play()
+            } else {
+            var userScore = Number(score.value)
+            if(userScore >= 40 && userScore < 46) {
+                showResults.innerHTML = 'pass - D'
+                songPass.play()
+        } else {
+            var userScore = Number(score.value)
+            if(userScore >= 50 && userScore < 60) {
+                showResults.innerHTML = 'credit - C'
+                songCredit.play()
+    }      else {
+            var userScore = Number(score.value)
+            if(userScore >= 61 && userScore < 69) {
+                showResults.innerHTML = 'Good - B'
+                songBrave.play()
+    }       else {
+            var userScore = Number(score.value)
+            if(userScore >= 70 && userScore <=100) {
+                showResults.innerHTML = 'Ace - A'
+                songAce.play()
+    }
+}
+        }
+    }
+}
+        }
+ }
+    </script>
+</body>
+</html>

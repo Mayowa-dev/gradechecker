@@ -1,0 +1,150 @@
+body {
+    background: linear-gradient(120deg, #a1c4fd, #c2e9fb, #f6d365, #fda085);
+    background-size: 300% 300%;
+    animation: gradientAnimation 10s ease infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+.container-fluid {
+    border-radius: 15px;
+    padding: 2rem;
+    transition: transform 0.3s ease-in-out;
+    animation: slideIn 0.5s ease forwards;
+    background: rgba(255, 255, 255, 0.8); 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #343a40;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+h2:hover {
+    color: #6c757d;
+}
+
+#score {
+    font-size: 1.2rem;
+    transition: box-shadow 0.3s ease;
+}
+#score:focus {
+    box-shadow: 0px 0px 10px rgba(108, 117, 125, 0.5);
+    border-color: #6c757d;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+    transform: scale(1.02);
+}
+.btn-secondary:active {
+    transform: scale(0.98);
+}
+
+
+#showResults {
+    color: #495057;
+    opacity: 40;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+@media (max-width: 992px) {
+    .container-fluid {
+        padding: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    #score {
+        font-size: 1.1rem;
+    }
+
+    .btn-secondary {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: 1.25rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    #score {
+        font-size: 1rem;
+    }
+
+    .btn-secondary {
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .container-fluid {
+        padding: 1rem;
+        width: 95%;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    #score {
+        font-size: 0.9rem;
+    }
+
+    .btn-secondary {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 400px) {
+    h2 {
+        font-size: 1rem;
+    }
+
+    #score {
+        font-size: 0.8rem;
+    }
+
+    .btn-secondary {
+        font-size: 0.8rem;
+    }
+}
